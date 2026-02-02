@@ -8,5 +8,9 @@ class Home extends Controller{
         $data["usuarios"] = $this->model->getUsers();
         $this->views->getView($this, "index", $data);
     }
+
+    public function login(){
+        $this->views->getView($this, "login");
+    }
 }
 ?>

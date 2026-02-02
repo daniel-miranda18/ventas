@@ -1,19 +1,34 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventas</title>
-</head>
-<body>
-    <h1>Vista 1 Usuarios</h1>
-
-    <?php if(!empty($usuarios)){ ?>
-        <?php foreach($usuarios as $u){ ?>
-            <?= $u['nick'] ?><br>
-        <?php } ?>
-    <?php }else{ ?>
-        No hay usuarios
-    <?php } ?>
-</body>
-</html>
+<?php require_once 'Views/Templates/header.php'; ?>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                Dashboard
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nick</th>
+                        <th>Nombre</th>
+                        <th>Caja</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data['usuarios'] as $u) { ?>
+                    <tr>
+                        <td><?= $u['id_usuario'] ?></td>
+                        <td><?= $u['nick'] ?></td>
+                        <td><?= $u['nombre'] ?></td>
+                        <td><?= $u['id_caja'] ?></td>
+                        <td><?= $u['usuario_estado'] ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<?php require_once 'Views/Templates/footer.php'; ?>
+                    
