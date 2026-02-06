@@ -8,9 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Ventas</title>
-    <link href="Assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="Assets/css/google.css" rel="stylesheet">
-    <link href="Assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?=base_url?>Assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url?>Assets/css/google.css" rel="stylesheet">
+    <link href="<?=base_url?>Assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?=base_url?>Assets/css/dataTables.min.css" rel="stylesheet">
+    <link href="<?=base_url?>Assets/css/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -24,7 +26,7 @@
             </a>
             <hr class="sidebar-divider my-0">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?=base_url?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Menú Principal</span></a>
             </li>
@@ -37,14 +39,14 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Usuarios</a>
-                        <a class="collapse-item" href="#">Cajas</a>
+                        <a class="collapse-item" href="<?=base_url?>Users">Usuarios</a>
+                        <a class="collapse-item" href="<?=base_url?>Cajas">Cajas</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <a class="nav-link" href="<?=base_url?>Productos">
+                    <i class="fab fa-product-hunt"></i>
                     <span>Productos</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
@@ -66,9 +68,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['nombre'] ?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="Assets/img/undraw_profile.svg">
+                                    src="<?=base_url?>Assets/img/undraw_profile.svg">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">

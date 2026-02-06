@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once "Config/Config.php";
     
     $root = !empty($_GET["var"]) ? $_GET["var"] : "Home";

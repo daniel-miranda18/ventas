@@ -4,11 +4,5 @@
         {
             parent::__construct();
         }
-
-        public function getUsers(){
-            $sql = "SELECT * FROM usuarios";
-            $data = $this->selectAll($sql);
-            return $data;
-        }
     }
 ?>

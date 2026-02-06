@@ -2,6 +2,7 @@
 class Query extends Connection{
     protected $connection;
     protected $sql;
+    protected $data;
 
     public function __construct(){
         parent::__construct();
@@ -20,6 +21,19 @@ class Query extends Connection{
         $result = $this->connection->prepare($this->sql);
         $result->execute();
         return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function save(string $sql, array $data){
+        $this->sql = $sql;
+        $this->data = $data;
+        $result = $this->connection->prepare($this->sql);
+        $dta = $result->execute($this->data);
+        if($dta){
+            $res = 1;
+        }else{
+            $res = 0;
+        }
+        return $res;
     }
 }
 ?>
